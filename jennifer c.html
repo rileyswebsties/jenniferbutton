@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Press Me for Jennifer Coolidge</title>
+    <style>
+      button {
+        background-color: purple;
+        color: white;
+        font-size: 24px;
+        padding: 20px;
+        border: none;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      body {
+        background-image: none;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .jennifer-coolidge {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-image: url('https://nypost.com/wp-content/uploads/sites/2/2022/12/jennifer-coolidge.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        z-index: -1;
+      }
+      .show-jennifer {
+        opacity: 1;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jennifer-coolidge"></div>
+    <button onclick="showImage()">Press Me for Jennifer Coolidge</button>
+    <script>
+      function showImage() {
+        document.querySelector('.jennifer-coolidge').classList.add('show-jennifer');
+        setTimeout(function () {
+          document.querySelector('.jennifer-coolidge').classList.remove('show-jennifer');
+        }, 3000);
+      }
+    </script>
+  </body>
+</html>
